@@ -1,5 +1,3 @@
-import { isBetween } from '~/utils/numberUtil';
-
 type ScrollDirection = 'x' | 'y' | 'both';
 
 /**
@@ -54,24 +52,24 @@ export const scrollToAnimation = (
 
 const scrollByDirection = (
     element: HTMLElement,
-    direction: ScrollDirection = 'both',
-    amount = 0
+    direction: ScrollDirection,
+    amount: number
 ) => {
     scrollDirection(element, direction, amount, 'scrollBy');
 };
 
 const scrollToDirection = (
     element: HTMLElement,
-    direction: ScrollDirection = 'both',
-    amount = 0
+    direction: ScrollDirection,
+    amount: number
 ) => {
     scrollDirection(element, direction, amount, 'scrollTo');
 };
 
 const scrollDirection = (
     element: HTMLElement,
-    direction: ScrollDirection = 'both',
-    amount = 0,
+    direction: ScrollDirection,
+    amount: number,
     scrollType: 'scrollTo' | 'scrollBy'
 ) => {
     switch (direction) {
@@ -85,4 +83,8 @@ const scrollDirection = (
             element[scrollType](amount, amount);
             break;
     }
+};
+
+const isBetween = (num = 0, min = 0, max = 0) => {
+    return num >= min && num <= max;
 };
