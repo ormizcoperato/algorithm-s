@@ -54,24 +54,24 @@ export const scrollToAnimation = (
 
 const scrollByDirection = (
     element: HTMLElement,
-    direction: ScrollDirection = 'both',
-    amount = 0
+    direction: ScrollDirection,
+    amount: number
 ) => {
     scrollDirection(element, direction, amount, 'scrollBy');
 };
 
 const scrollToDirection = (
     element: HTMLElement,
-    direction: ScrollDirection = 'both',
-    amount = 0
+    direction: ScrollDirection,
+    amount: number
 ) => {
     scrollDirection(element, direction, amount, 'scrollTo');
 };
 
 const scrollDirection = (
     element: HTMLElement,
-    direction: ScrollDirection = 'both',
-    amount = 0,
+    direction: ScrollDirection,
+    amount: number,
     scrollType: 'scrollTo' | 'scrollBy'
 ) => {
     switch (direction) {
