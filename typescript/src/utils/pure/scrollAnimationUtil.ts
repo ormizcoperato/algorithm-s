@@ -85,6 +85,6 @@ const scrollDirection = (
     }
 };
 
-const isBetween = (num = 0, min = 0, max = 0) => {
+const isBetween = (num: number, min: number, max: number) => {
     return num >= min && num <= max;
 };
